@@ -48,6 +48,35 @@ const getMessageEl = (form) => {
 
 const validPhone = (text) => text.replace(/\D/g, "").length >= 10;
 
+const postLead = async (webhook, payload, config) => {
+  const isFormspree = /formspree\.io/i.test(webhook);
+
+  if (isFormspree) {
+    const params = new URLSearchParams();
+    Object.entries(payload).forEach(([k, v]) => params.append(k, String(v)));
+
+    const requiredField = String(config.formspreeRequiredFieldName || "").trim();
+    if (requiredField) {
+      params.append(requiredField, String(config.formspreeRequiredFieldValue || "lead"));
+    }
+
+    return fetch(webhook, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: params.toString(),
+    });
+  }
+
+  return fetch(webhook, {
+    method: config.leadWebhookMethod || "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+};
+
 const leadForms = document.querySelectorAll("form[data-lead-form='true']");
 const config = window.SITE_CONFIG || {};
 
@@ -80,17 +109,12 @@ leadForms.forEach((form) => {
     };
 
     try {
-      const res = await fetch(webhook, {
-        method: config.leadWebhookMethod || "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
+      const res = await postLead(webhook, payload, config);
       if (!res.ok) {
         throw new Error("Webhook request failed");
       }
 
-      const thankYouPath = String(config.thankYouPath || "/thank-you.html");
+      const thankYouPath = String(config.thankYouPath || "/thank-you");
       const target = `${thankYouPath}?form=${encodeURIComponent(payload.form_name)}`;
       window.location.assign(target);
     } catch (err) {
