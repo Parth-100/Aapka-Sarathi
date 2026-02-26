@@ -1,13 +1,18 @@
-<!doctype html>
+ï»¿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aapka Sarathi Tours & Travel plans safe, calm, history-rich journeys across India for solo travelers, groups, ladies groups, and temple yatras." />
+  <meta name="keywords" content="India tour packages, temple yatra, solo travel India, group tours, Aapka Sarathi" />
+  <meta property="og:title" content="Aapka Sarathi Tours & Travel" />
+  <meta property="og:description" content="Plan calm, safe, and meaningful India journeys with local support." />
+  <meta property="og:type" content="website" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self';" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
-  <title>Aapka Sarathi Tours & Travel</title>
+  <title>Aapka Sarathi Tours & Travel | Calm, Safe India Journeys</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +21,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="topbar">
-    <span>Phone: 8830098262</span>
+    <span><a href="tel:+918830098262">Phone: 8830098262</a></span>
     <span>Email: aapkasarathi06@gmail.com</span>
   </div>
   <header class="header">
@@ -25,7 +30,8 @@
         <img src="assets/Logo Aapka Sarathi.jpeg" alt="Aapka Sarathi Tours logo" />
         <div class="brand-title">Aapka Sarathi Tours & Travel</div>
       </div>
-      <div class="nav-links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
+      <div class="nav-links" id="menu-links">
         <a href="index.html">Home</a>
         <a href="packages.html">Packages</a>
         <a href="temples.html">Temple Yatras</a>
@@ -38,11 +44,12 @@
   <main id="main">
     <section class="hero">
       <div class="hero-card reveal">
-        <h1>Minimal, calm travel with rich history and story</h1>
-        <p>We plan journeys across North and South India for solo travelers, group tours, ladies groups, and personal trips. Every itinerary blends heritage, safety, and local insight.</p>
+        <h1>Plan your India trip with calm pacing, clear pricing, and trusted support</h1>
+        <p>From temple yatras to family and group tours, we create safe, meaningful journeys across India with local guidance and practical planning from day one.</p>
         <div class="hero-cta">
-          <a class="button primary" href="packages.html">Explore Packages</a>
-          <a class="button secondary" href="contact.html">Plan Your Trip</a>
+          <a class="button primary" href="contact.html">Get Free Itinerary</a>
+          <a class="button secondary" href="tel:+918830098262">Call Now</a>
+          <a class="button whatsapp" href="https://wa.me/918830098262?text=Hi%2C%20I%20want%20to%20plan%20a%20trip%20with%20Aapka%20Sarathi" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="badge-row">
           <span class="badge">Solo Travel</span>
@@ -52,18 +59,68 @@
         </div>
       </div>
       <div class="hero-card reveal">
-        <h2>Find your destination</h2>
-        <p class="lead">Share your preferred region, travel style, and dates. We prepare a calm, well-paced itinerary with history notes and local guidance.</p>
-        <div class="search-panel">
-          <input type="text" placeholder="Destination or circuit" aria-label="Destination" />
-          <select aria-label="Travel style">
+        <h2>Get your custom quote in 10 minutes</h2>
+        <p class="lead">Share your dates and preferred route. We will call you with a clear plan and package options.</p>
+        <form class="search-panel" id="quick-form" action="mailto:aapkasarathi06@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your name" aria-label="Name" required />
+          <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" required />
+          <input type="text" name="destination" placeholder="Destination or circuit" aria-label="Destination" required />
+          <select name="style" aria-label="Travel style">
             <option>Solo travel</option>
             <option>Group tour</option>
             <option>Ladies group</option>
             <option>Personal trip</option>
           </select>
-          <a class="button primary" href="contact.html">Request Plan</a>
-        </div>
+          <button class="button primary" type="submit">Request Plan</button>
+          <p class="form-message" id="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section trust-strip reveal">
+      <div class="trust-item">
+        <h3>Personal planning support</h3>
+        <p>One-to-one itinerary help before booking.</p>
+      </div>
+      <div class="trust-item">
+        <h3>Verified stays and transport</h3>
+        <p>Safe and comfort-focused route planning.</p>
+      </div>
+      <div class="trust-item">
+        <h3>Senior-friendly pacing</h3>
+        <p>Rest stops and darshan-first scheduling.</p>
+      </div>
+      <div class="trust-item">
+        <h3>Direct phone support</h3>
+        <p>Quick response on call and WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <h2>Popular packages with starting budgets</h2>
+      <p class="lead">Transparent starting points so you can shortlist quickly. Final price depends on dates, hotel category, and group size.</p>
+      <div class="grid">
+        <article class="card pricing-card reveal">
+          <span class="tag">North India</span>
+          <h3>Ganga Heritage Trail</h3>
+          <p>Varanasi, Prayagraj, Ayodhya, and Lucknow.</p>
+          <p class="price">Starts at INR 18,500 / person</p>
+          <a class="button secondary" href="contact.html">Get full quote</a>
+        </article>
+        <article class="card pricing-card reveal">
+          <span class="tag">Royal Route</span>
+          <h3>Pink City and Taj</h3>
+          <p>Jaipur and Agra with guided heritage visits.</p>
+          <p class="price">Starts at INR 16,900 / person</p>
+          <a class="button secondary" href="contact.html">Get full quote</a>
+        </article>
+        <article class="card pricing-card reveal">
+          <span class="tag">South India</span>
+          <h3>Temple Coast Circuit</h3>
+          <p>Madurai, Rameswaram, Kanyakumari, Mahabalipuram.</p>
+          <p class="price">Starts at INR 21,000 / person</p>
+          <a class="button secondary" href="contact.html">Get full quote</a>
+        </article>
       </div>
     </section>
 
@@ -74,7 +131,7 @@
         <article class="card reveal">
           <span class="tag">Heritage</span>
           <h3>Varanasi</h3>
-          <p>Among the world’s oldest living cities, Varanasi is known for its ghats, evening aarti, and a continuous cultural thread that spans millennia.</p>
+          <p>Among the worldâ€™s oldest living cities, Varanasi is known for its ghats, evening aarti, and a continuous cultural thread that spans millennia.</p>
         </article>
         <article class="card reveal">
           <span class="tag">Pilgrimage</span>
@@ -89,7 +146,7 @@
         <article class="card reveal">
           <span class="tag">Royal India</span>
           <h3>Jaipur</h3>
-          <p>The Pink City’s palaces, stepwells, and craft traditions trace the legacy of Rajput kingdoms and desert trade routes.</p>
+          <p>The Pink Cityâ€™s palaces, stepwells, and craft traditions trace the legacy of Rajput kingdoms and desert trade routes.</p>
         </article>
         <article class="card reveal">
           <span class="tag">Spiritual</span>
@@ -136,7 +193,7 @@
         <article class="card reveal">
           <span class="tag">Classical India</span>
           <h3>Thanjavur</h3>
-          <p>The Brihadeeswara Temple stands as a Chola masterpiece and a symbol of South India’s golden age.</p>
+          <p>The Brihadeeswara Temple stands as a Chola masterpiece and a symbol of South Indiaâ€™s golden age.</p>
         </article>
       </div>
     </section>
@@ -161,23 +218,23 @@
     </section>
 
     <section class="section alt">
-      <h2>Featured domestic packages</h2>
-      <p class="lead">Carefully paced routes that blend history, temples, and modern comfort.</p>
+      <h2>What travelers say</h2>
+      <p class="lead">Real feedback from families, solo travelers, and temple groups.</p>
       <div class="grid">
-        <article class="card reveal">
-          <span class="tag">North India</span>
-          <h3>Ganga Heritage Trail</h3>
-          <p>Varanasi, Prayagraj, Ayodhya, and Lucknow with heritage walks and riverside rituals.</p>
+        <article class="card reveal review-card">
+          <h3>Family pilgrimage to Rameswaram</h3>
+          <p>"Everything was timely and smooth. Elders were very comfortable and hotels were near temple areas."</p>
+          <p class="reviewer">- Joshi Family, Pune</p>
         </article>
-        <article class="card reveal">
-          <span class="tag">Royal Route</span>
-          <h3>Pink City & Taj</h3>
-          <p>Agra and Jaipur with Mughal architecture, palaces, and artisan markets.</p>
+        <article class="card reveal review-card">
+          <h3>Solo trip to Varanasi and Ayodhya</h3>
+          <p>"I got clear instructions at every step. Driver support and local guide quality were excellent."</p>
+          <p class="reviewer">- Priya S., Mumbai</p>
         </article>
-        <article class="card reveal">
-          <span class="tag">South India</span>
-          <h3>Temple Coast Circuit</h3>
-          <p>Madurai, Rameswaram, Kanyakumari, and Mahabalipuram with coastal heritage.</p>
+        <article class="card reveal review-card">
+          <h3>Ladies group North India circuit</h3>
+          <p>"Very safe arrangements and easy pace. Team stayed connected on call throughout the tour."</p>
+          <p class="reviewer">- Nandini Group, Nagpur</p>
         </article>
       </div>
     </section>
@@ -202,20 +259,20 @@
     </section>
 
     <section class="section alt">
-      <h2>Travel stories and insights</h2>
-      <p class="lead">Short guides to help you travel with meaning and confidence.</p>
+      <h2>Frequently asked questions</h2>
+      <p class="lead">Quick answers before you finalize your plan.</p>
       <div class="grid">
         <article class="card story-card reveal">
-          <h3>How to plan a temple yatra with elders</h3>
-          <p>Tips on pacing, darshan timings, and comfortable lodging near sacred sites.</p>
+          <h3>Can you customize itinerary by budget?</h3>
+          <p>Yes. We provide options by hotel category, transport type, and number of days.</p>
         </article>
         <article class="card story-card reveal">
-          <h3>History behind South India’s temple towers</h3>
-          <p>A quick look at the dynasties that shaped the gopurams and corridors.</p>
+          <h3>Do you arrange temple darshan timings?</h3>
+          <p>Yes. We design day flow around darshan windows and rest needs.</p>
         </article>
         <article class="card story-card reveal">
-          <h3>Solo travel in North India: calm and safe</h3>
-          <p>How we plan solo itineraries with vetted transport and clear local support.</p>
+          <h3>How do I book?</h3>
+          <p>Call, WhatsApp, or submit the form. We share itinerary draft and quotation quickly.</p>
         </article>
       </div>
     </section>
@@ -244,14 +301,14 @@
 
     <section class="section alt">
       <div class="newsletter">
-        <h2>Get trip updates and seasonal yatra news</h2>
-        <p class="lead">Receive calm, practical travel updates and itinerary ideas.</p>
+        <h2>Ready to plan your trip?</h2>
+        <p class="lead">Talk to our planner now and get a practical itinerary with transparent costing.</p>
         <form class="form" action="mailto:aapkasarathi06@gmail.com" method="post" enctype="text/plain">
           <label>
-            Email address
-            <input type="email" name="email" required />
+            Phone number
+            <input type="tel" name="phone" required />
           </label>
-          <button class="button primary" type="submit">Subscribe</button>
+          <button class="button primary" type="submit">Request Callback</button>
         </form>
       </div>
     </section>
@@ -260,6 +317,21 @@
   <footer>
     <div>Aapka Sarathi Tours & Travel | Phone: 8830098262 | Email: aapkasarathi06@gmail.com</div>
   </footer>
+  <div class="sticky-actions">
+    <a href="tel:+918830098262">Call</a>
+    <a href="https://wa.me/918830098262?text=Hi%2C%20I%20want%20to%20book%20a%20trip" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="contact.html">Get Quote</a>
+  </div>
   <script src="script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Aapka Sarathi Tours & Travel",
+    "telephone": "+91-8830098262",
+    "email": "aapkasarathi06@gmail.com",
+    "url": "https://aapka-sarathi2.pages.dev/"
+  }
+  </script>
 </body>
 </html>
