@@ -3,5 +3,5 @@
   leadWebhookMethod: "POST",
   thankYouPath: "/thank-you",
   formspreeRequiredFieldName: "aapkasarathi06@gmail.com",
-  formspreeRequiredFieldValue: "lead"
+  formspreeRequiredFieldValue: "aapkasarathi06@gmail.com"
 };

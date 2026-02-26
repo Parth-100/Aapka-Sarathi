@@ -46,36 +46,18 @@ const getMessageEl = (form) => {
   return el;
 };
 
-const validPhone = (text) => text.replace(/\D/g, "").length >= 10;
-
-const postLead = async (webhook, payload, config) => {
-  const isFormspree = /formspree\.io/i.test(webhook);
-
-  if (isFormspree) {
-    const params = new URLSearchParams();
-    Object.entries(payload).forEach(([k, v]) => params.append(k, String(v)));
-
-    const requiredField = String(config.formspreeRequiredFieldName || "").trim();
-    if (requiredField) {
-      params.append(requiredField, String(config.formspreeRequiredFieldValue || "lead"));
-    }
-
-    return fetch(webhook, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: params.toString(),
-    });
+const setHidden = (form, name, value) => {
+  let input = form.querySelector(`input[name="${name}"]`);
+  if (!input) {
+    input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    form.appendChild(input);
   }
-
-  return fetch(webhook, {
-    method: config.leadWebhookMethod || "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+  input.value = value;
 };
+
+const validPhone = (text) => text.replace(/\D/g, "").length >= 10;
 
 const leadForms = document.querySelectorAll("form[data-lead-form='true']");
 const config = window.SITE_CONFIG || {};
@@ -98,6 +80,34 @@ leadForms.forEach((form) => {
       return;
     }
 
+    const isFormspree = /formspree\.io/i.test(webhook);
+    if (isFormspree) {
+      const formName = form.dataset.formName || "website_form";
+      const thankYouPath = String(config.thankYouPath || "/thank-you");
+      const nextUrl = `${window.location.origin}${thankYouPath}?form=${encodeURIComponent(formName)}`;
+
+      form.action = webhook;
+      form.method = "POST";
+      form.enctype = "application/x-www-form-urlencoded";
+
+      setHidden(form, "form_name", formName);
+      setHidden(form, "source_page", window.location.pathname);
+      setHidden(form, "submitted_at", new Date().toISOString());
+      setHidden(form, "_next", nextUrl);
+
+      const requiredField = String(config.formspreeRequiredFieldName || "").trim();
+      if (requiredField) {
+        setHidden(
+          form,
+          requiredField,
+          String(config.formspreeRequiredFieldValue || "aapkasarathi06@gmail.com")
+        );
+      }
+
+      msg.textContent = "Submitting your request...";
+      return;
+    }
+
     event.preventDefault();
     msg.textContent = "Submitting your request...";
 
@@ -109,7 +119,12 @@ leadForms.forEach((form) => {
     };
 
     try {
-      const res = await postLead(webhook, payload, config);
+      const res = await fetch(webhook, {
+        method: config.leadWebhookMethod || "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
       if (!res.ok) {
         throw new Error("Webhook request failed");
       }
