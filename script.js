@@ -90,8 +90,9 @@ leadForms.forEach((form) => {
         throw new Error("Webhook request failed");
       }
 
-      msg.textContent = "Thanks. Your request is submitted successfully.";
-      form.reset();
+      const thankYouPath = String(config.thankYouPath || "/thank-you.html");
+      const target = `${thankYouPath}?form=${encodeURIComponent(payload.form_name)}`;
+      window.location.assign(target);
     } catch (err) {
       msg.textContent = "Could not auto-submit. Please use call or WhatsApp now.";
     }
