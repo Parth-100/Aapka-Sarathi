@@ -8,7 +8,11 @@
   <meta property="og:title" content="Aapka Sarathi Tours & Travel" />
   <meta property="og:description" content="Plan calm, safe, and meaningful India journeys with local support." />
   <meta property="og:type" content="website" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self';" />
+  <meta property="og:url" content="https://aapka-sarathi2.pages.dev/" />
+  <meta property="og:image" content="https://aapka-sarathi2.pages.dev/assets/Logo%20Aapka%20Sarathi.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://aapka-sarathi2.pages.dev/" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://formspree.io https://script.google.com https://script.googleusercontent.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self';" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
@@ -61,7 +65,7 @@
       <div class="hero-card reveal">
         <h2>Get your custom quote in 10 minutes</h2>
         <p class="lead">Share your dates and preferred route. We will call you with a clear plan and package options.</p>
-        <form class="search-panel" id="quick-form" action="mailto:aapkasarathi06@gmail.com" method="post" enctype="text/plain">
+        <form class="search-panel" id="quick-form" data-lead-form="true" data-form-name="quick_quote" action="mailto:aapkasarathi06@gmail.com" method="post" enctype="text/plain">
           <input type="text" name="name" placeholder="Your name" aria-label="Name" required />
           <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" required />
           <input type="text" name="destination" placeholder="Destination or circuit" aria-label="Destination" required />
@@ -303,7 +307,7 @@
       <div class="newsletter">
         <h2>Ready to plan your trip?</h2>
         <p class="lead">Talk to our planner now and get a practical itinerary with transparent costing.</p>
-        <form class="form" action="mailto:aapkasarathi06@gmail.com" method="post" enctype="text/plain">
+        <form class="form" data-lead-form="true" data-form-name="callback_request" action="mailto:aapkasarathi06@gmail.com" method="post" enctype="text/plain">
           <label>
             Phone number
             <input type="tel" name="phone" required />
@@ -322,6 +326,7 @@
     <a href="https://wa.me/918830098262?text=Hi%2C%20I%20want%20to%20book%20a%20trip" target="_blank" rel="noopener">WhatsApp</a>
     <a href="contact.html">Get Quote</a>
   </div>
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
   <script type="application/ld+json">
   {
@@ -335,3 +340,5 @@
   </script>
 </body>
 </html>
+
+

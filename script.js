@@ -26,24 +26,77 @@ if (menuToggle && navLinks) {
   });
 }
 
-const quickForm = document.querySelector("#quick-form");
-const formMessage = document.querySelector("#form-message");
+const parseFormData = (form) => {
+  const fd = new FormData(form);
+  const data = {};
+  fd.forEach((value, key) => {
+    data[key] = typeof value === "string" ? value.trim() : value;
+  });
+  return data;
+};
 
-if (quickForm && formMessage) {
-  quickForm.addEventListener("submit", (event) => {
-    const phoneInput = quickForm.querySelector("input[name='phone']");
-    const rawPhone = phoneInput ? phoneInput.value.trim() : "";
-    const digits = rawPhone.replace(/\D/g, "");
+const getMessageEl = (form) => {
+  let el = form.querySelector(".form-message");
+  if (!el) {
+    el = document.createElement("p");
+    el.className = "form-message";
+    el.setAttribute("aria-live", "polite");
+    form.appendChild(el);
+  }
+  return el;
+};
 
-    if (digits.length < 10) {
+const validPhone = (text) => text.replace(/\D/g, "").length >= 10;
+
+const leadForms = document.querySelectorAll("form[data-lead-form='true']");
+const config = window.SITE_CONFIG || {};
+
+leadForms.forEach((form) => {
+  form.addEventListener("submit", async (event) => {
+    const msg = getMessageEl(form);
+    const data = parseFormData(form);
+    const phone = String(data.phone || "");
+
+    if (phone && !validPhone(phone)) {
       event.preventDefault();
-      formMessage.textContent = "Please enter a valid 10-digit phone number.";
+      msg.textContent = "Please enter a valid 10-digit phone number.";
       return;
     }
 
-    formMessage.textContent = "Opening your email app with trip details...";
+    const webhook = String(config.leadWebhookUrl || "").trim();
+    if (!webhook) {
+      msg.textContent = "Opening your email app to send the inquiry...";
+      return;
+    }
+
+    event.preventDefault();
+    msg.textContent = "Submitting your request...";
+
+    const payload = {
+      ...data,
+      form_name: form.dataset.formName || "website_form",
+      source_page: window.location.pathname,
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      const res = await fetch(webhook, {
+        method: config.leadWebhookMethod || "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("Webhook request failed");
+      }
+
+      msg.textContent = "Thanks. Your request is submitted successfully.";
+      form.reset();
+    } catch (err) {
+      msg.textContent = "Could not auto-submit. Please use call or WhatsApp now.";
+    }
   });
-}
+});
 
 window.addEventListener("scroll", revealNow);
 window.addEventListener("load", revealNow);
