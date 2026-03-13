@@ -338,29 +338,56 @@ footer p{color:var(--muted);font-size:.82rem}
 </div>
 
 <script>
-// picsum.photos/id/{id}/600/400 — Fastly CDN, works everywhere, no hotlink block
+// Wikipedia page titles for each destination — images fetched live via Wikipedia REST API
 const destinations=[
-  {tag:'heritage',label:'Heritage',name:'Rajasthan Royal Tour',desc:'Explore majestic Amber Fort, Hawa Mahal and Jal Mahal across Jaipur, Jodhpur & Udaipur. Immerse in Rajputana grandeur, vibrant bazaars and royal cuisine.',img:'https://picsum.photos/id/1018/600/400',price:'₹11,499',days:'6 Days',rating:'4.9',includes:'Hotel · AC Bus · Guide'},
-  {tag:'nature',label:'Nature',name:'Kerala Backwaters',desc:'Glide through tranquil backwaters on a traditional houseboat, explore lush tea gardens and pristine beaches of Alleppey and Kovalam.',img:'https://picsum.photos/id/15/600/400',price:'₹9,799',days:'5 Days',rating:'4.8',includes:'Houseboat · Meals · Guide'},
-  {tag:'adventure',label:'Adventure',name:'Himachal – Manali',desc:'Conquer Rohtang Pass, trek Solang Valley and witness the magic of snow-capped Himalayan peaks. Perfect for adventure seekers.',img:'https://picsum.photos/id/29/600/400',price:'₹8,999',days:'5 Days',rating:'4.7',includes:'Hotel · Transport · Activities'},
-  {tag:'spiritual',label:'Spiritual',name:'Varanasi Pilgrimage',desc:'Witness the soul-stirring Ganga Aarti at sacred ghats, explore ancient temples and feel the timeless spiritual heartbeat of India.',img:'https://picsum.photos/id/1053/600/400',price:'₹6,499',days:'3 Days',rating:'4.9',includes:'Hotel · Boat Ride · Aarti'},
-  {tag:'heritage',label:'Heritage',name:'Taj Mahal – Agra',desc:"Witness the world's greatest monument of love at sunrise. Explore Agra Fort, Fatehpur Sikri and savour Mughal culinary heritage.",img:'https://picsum.photos/id/1047/600/400',price:'₹7,299',days:'2 Days',rating:'5.0',includes:'Hotel · Guide · Entry Tickets'},
-  {tag:'beach',label:'Beach',name:'Goa Beach Bliss',desc:"Sun, surf and soul-food on Goa's golden sands. Enjoy vibrant culture, Portuguese heritage and fresh seafood by the Arabian Sea.",img:'https://picsum.photos/id/1039/600/400',price:'₹7,999',days:'4 Days',rating:'4.8',includes:'Hotel · Airport Transfer · Tour'},
-  {tag:'wildlife',label:'Wildlife',name:'Jim Corbett Safari',desc:"Track Bengal tigers and exotic wildlife across India's oldest national park. Jeep safaris, jungle walks and nature photography await.",img:'https://picsum.photos/id/582/600/400',price:'₹10,299',days:'3 Days',rating:'4.7',includes:'Resort · Jeep Safari · Guide'},
-  {tag:'beach',label:'Beach',name:'Andaman Islands',desc:'Dive into crystal-clear turquoise waters, explore Radhanagar Beach and snorkel through vibrant coral reefs in the Bay of Bengal.',img:'https://picsum.photos/id/1011/600/400',price:'₹18,499',days:'6 Days',rating:'4.9',includes:'Resort · Ferry · Snorkelling'},
-  {tag:'heritage',label:'Heritage',name:'Mysore & Coorg',desc:'Marvel at the illuminated Mysore Palace, explore fragrant spice gardens of Coorg and sip the finest single-origin Indian coffee.',img:'https://picsum.photos/id/1031/600/400',price:'₹9,199',days:'4 Days',rating:'4.8',includes:'Hotel · Transport · Guide'}
+  {tag:'heritage',label:'Heritage',name:'Rajasthan Royal Tour',desc:'Explore majestic Amber Fort, Hawa Mahal and Jal Mahal across Jaipur, Jodhpur & Udaipur. Immerse in Rajputana grandeur, vibrant bazaars and royal cuisine.',wiki:'Hawa_Mahal',img:'',price:'₹11,499',days:'6 Days',rating:'4.9',includes:'Hotel · AC Bus · Guide'},
+  {tag:'nature',label:'Nature',name:'Kerala Backwaters',desc:'Glide through tranquil backwaters on a traditional houseboat, explore lush tea gardens and pristine beaches of Alleppey and Kovalam.',wiki:'Kerala_backwaters',img:'',price:'₹9,799',days:'5 Days',rating:'4.8',includes:'Houseboat · Meals · Guide'},
+  {tag:'adventure',label:'Adventure',name:'Himachal – Manali',desc:'Conquer Rohtang Pass, trek Solang Valley and witness the magic of snow-capped Himalayan peaks. Perfect for adventure seekers.',wiki:'Manali,_Himachal_Pradesh',img:'',price:'₹8,999',days:'5 Days',rating:'4.7',includes:'Hotel · Transport · Activities'},
+  {tag:'spiritual',label:'Spiritual',name:'Varanasi Pilgrimage',desc:'Witness the soul-stirring Ganga Aarti at sacred ghats, explore ancient temples and feel the timeless spiritual heartbeat of India.',wiki:'Varanasi',img:'',price:'₹6,499',days:'3 Days',rating:'4.9',includes:'Hotel · Boat Ride · Aarti'},
+  {tag:'heritage',label:'Heritage',name:'Taj Mahal – Agra',desc:"Witness the world's greatest monument of love at sunrise. Explore Agra Fort, Fatehpur Sikri and savour Mughal culinary heritage.",wiki:'Taj_Mahal',img:'',price:'₹7,299',days:'2 Days',rating:'5.0',includes:'Hotel · Guide · Entry Tickets'},
+  {tag:'beach',label:'Beach',name:'Goa Beach Bliss',desc:"Sun, surf and soul-food on Goa's golden sands. Enjoy vibrant culture, Portuguese heritage and fresh seafood by the Arabian Sea.",wiki:'Goa',img:'',price:'₹7,999',days:'4 Days',rating:'4.8',includes:'Hotel · Airport Transfer · Tour'},
+  {tag:'wildlife',label:'Wildlife',name:'Jim Corbett Safari',desc:"Track Bengal tigers and exotic wildlife across India's oldest national park. Jeep safaris, jungle walks and nature photography await.",wiki:'Jim_Corbett_National_Park',img:'',price:'₹10,299',days:'3 Days',rating:'4.7',includes:'Resort · Jeep Safari · Guide'},
+  {tag:'beach',label:'Beach',name:'Andaman Islands',desc:'Dive into crystal-clear turquoise waters, explore Radhanagar Beach and snorkel through vibrant coral reefs in the Bay of Bengal.',wiki:'Andaman_Islands',img:'',price:'₹18,499',days:'6 Days',rating:'4.9',includes:'Resort · Ferry · Snorkelling'},
+  {tag:'heritage',label:'Heritage',name:'Mysore & Coorg',desc:'Marvel at the illuminated Mysore Palace, explore fragrant spice gardens of Coorg and sip the finest single-origin Indian coffee.',wiki:'Mysore_Palace',img:'',price:'₹9,199',days:'4 Days',rating:'4.8',includes:'Hotel · Transport · Guide'}
 ];
 
 const galleryItems=[
-  {img:'https://picsum.photos/id/1018/600/600',label:'Hawa Mahal, Jaipur',likes:'1.2K',wide:false,tall:false},
-  {img:'https://picsum.photos/id/15/800/600',label:'Kerala Backwaters',likes:'2.4K',wide:true,tall:false},
-  {img:'https://picsum.photos/id/1053/600/800',label:'Varanasi Ghats',likes:'3.1K',wide:false,tall:true},
-  {img:'https://picsum.photos/id/1047/600/600',label:'Taj Mahal, Agra',likes:'4.8K',wide:false,tall:false},
-  {img:'https://picsum.photos/id/1011/600/600',label:'Andaman Islands',likes:'1.9K',wide:false,tall:false},
-  {img:'https://picsum.photos/id/1031/600/600',label:'Mysore Palace',likes:'2.7K',wide:false,tall:false},
-  {img:'https://picsum.photos/id/29/800/600',label:'Rohtang Pass, Manali',likes:'1.6K',wide:true,tall:false},
-  {img:'https://picsum.photos/id/1039/600/600',label:'Baga Beach, Goa',likes:'3.3K',wide:false,tall:false}
+  {wiki:'Hawa_Mahal',img:'',label:'Hawa Mahal, Jaipur',likes:'1.2K',wide:false,tall:false},
+  {wiki:'Kerala_backwaters',img:'',label:'Kerala Backwaters',likes:'2.4K',wide:true,tall:false},
+  {wiki:'Varanasi',img:'',label:'Varanasi Ghats',likes:'3.1K',wide:false,tall:true},
+  {wiki:'Taj_Mahal',img:'',label:'Taj Mahal, Agra',likes:'4.8K',wide:false,tall:false},
+  {wiki:'Andaman_Islands',img:'',label:'Andaman Islands',likes:'1.9K',wide:false,tall:false},
+  {wiki:'Mysore_Palace',img:'',label:'Mysore Palace',likes:'2.7K',wide:false,tall:false},
+  {wiki:'Rohtang_Pass',img:'',label:'Rohtang Pass, Manali',likes:'1.6K',wide:true,tall:false},
+  {wiki:'Goa',img:'',label:'Baga Beach, Goa',likes:'3.3K',wide:false,tall:false}
 ];
+
+// Fetch real images from Wikipedia REST API for all items
+async function fetchWikiImage(title){
+  try{
+    const r=await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`);
+    const d=await r.json();
+    return d.thumbnail?.source||d.originalimage?.source||'';
+  }catch(e){return '';}
+}
+
+async function loadAllImages(){
+  // Fetch all destination images in parallel
+  const destImgs=await Promise.all(destinations.map(d=>fetchWikiImage(d.wiki)));
+  destImgs.forEach((img,i)=>destinations[i].img=img||`https://picsum.photos/seed/${i+1}/600/400`);
+
+  const galImgs=await Promise.all(galleryItems.map(g=>fetchWikiImage(g.wiki)));
+  galImgs.forEach((img,i)=>galleryItems[i].img=img||`https://picsum.photos/seed/${i+10}/600/600`);
+
+  // Also update hero card images
+  const heroImgs=await Promise.all(['Hawa_Mahal','Kerala_backwaters','Manali,_Himachal_Pradesh'].map(fetchWikiImage));
+  const heroEls=document.querySelectorAll('.c3-img img');
+  heroImgs.forEach((img,i)=>{if(img&&heroEls[i])heroEls[i].src=img;});
+
+  renderDest('all');
+  renderGallery();
+}
+loadAllImages();
 
 function renderDest(filter){
   const grid=document.getElementById('destGrid');
@@ -394,7 +421,17 @@ function renderDest(filter){
     c.addEventListener('mouseleave',()=>c.style.transform='');
   });
 }
+// Initial render with placeholder while images load
 renderDest('all');
+
+function renderGallery(){
+  document.getElementById('galleryGrid').innerHTML=galleryItems.map(g=>`
+    <div class="g-item${g.wide?' wide':''}${g.tall?' tall':''}">
+      <img src="${g.img}" alt="${g.label}" loading="lazy" style="background:#1a1a2e"/>
+      <div class="g-overlay"><span>❤️ ${g.likes}</span><span style="font-size:.76rem">${g.label}</span></div>
+    </div>`).join('');
+}
+renderGallery();
 
 function selectDest(name){
   document.getElementById('f-dest').value=name;
