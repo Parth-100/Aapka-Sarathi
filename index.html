@@ -188,9 +188,9 @@ footer p{color:var(--muted);font-size:.82rem}
       <button class="btn-sec" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Trip</button>
     </div>
     <div class="scene">
-      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/400px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg" alt="Rajasthan" crossorigin="anonymous"/></div><div class="c3-info"><h4>Rajasthan Royal</h4><p>Heritage & palaces</p><div class="c3-price">₹11,499</div></div></div></div>
-      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/400px-Kerala_backwater.jpg" alt="Kerala" crossorigin="anonymous"/></div><div class="c3-info"><h4>Kerala Backwaters</h4><p>Serene houseboat</p><div class="c3-price">₹9,799</div></div></div></div>
-      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/400px-Rohtang_Pass.jpg" alt="Manali" crossorigin="anonymous"/></div><div class="c3-info"><h4>Himachal Peaks</h4><p>Mountain adventures</p><div class="c3-price">₹8,999</div></div></div></div>
+      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://picsum.photos/id/1018/400/300" alt="Rajasthan"/></div><div class="c3-info"><h4>Rajasthan Royal</h4><p>Heritage & palaces</p><div class="c3-price">₹11,499</div></div></div></div>
+      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://picsum.photos/id/15/400/300" alt="Kerala"/></div><div class="c3-info"><h4>Kerala Backwaters</h4><p>Serene houseboat</p><div class="c3-price">₹9,799</div></div></div></div>
+      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://picsum.photos/id/29/400/300" alt="Manali"/></div><div class="c3-info"><h4>Himachal Peaks</h4><p>Mountain adventures</p><div class="c3-price">₹8,999</div></div></div></div>
     </div>
   </div>
 </section>
@@ -282,14 +282,14 @@ footer p{color:var(--muted);font-size:.82rem}
     <div class="sec-hdr">
       <div class="insta-header">
         <div class="insta-logo">📸</div>
-        <div><div class="insta-handle">Follow us <a href="https://www.instagram.com/AapkaSarathi" target="_blank">@AapkaSarathi</a></div><div style="font-size:.78rem;color:var(--muted)">Real moments. Real India. Real memories.</div></div>
-        <button class="insta-follow" onclick="window.open('https://www.instagram.com/AapkaSarathi','_blank')">+ Follow</button>
+        <div><div class="insta-handle">Follow us <a href="https://www.instagram.com/aapka_sarathi" target="_blank">@aapka_sarathi</a></div><div style="font-size:.78rem;color:var(--muted)">Real moments. Real India. Real memories.</div></div>
+        <button class="insta-follow" onclick="window.open('https://www.instagram.com/aapka_sarathi','_blank')">+ Follow</button>
       </div>
       <p style="color:var(--muted);font-size:.94rem">Our travelers share their most beautiful moments from across India</p>
     </div>
     <div class="gallery-grid" id="galleryGrid"></div>
     <div style="text-align:center;margin-top:26px">
-      <button class="btn-primary" onclick="window.open('https://www.instagram.com/AapkaSarathi','_blank')">View All on Instagram →</button>
+      <button class="btn-primary" onclick="window.open('https://www.instagram.com/aapka_sarathi','_blank')">View All on Instagram →</button>
     </div>
   </div>
 </div>
@@ -323,7 +323,7 @@ footer p{color:var(--muted);font-size:.82rem}
     <a href="#about">Services</a><a href="#gallery">Gallery</a><a href="#">Privacy Policy</a>
   </div>
   <div class="f-social">
-    <a href="https://www.instagram.com/AapkaSarathi" target="_blank">📸</a>
+    <a href="https://www.instagram.com/aapka_sarathi" target="_blank">📸</a>
     <a href="#">📘</a><a href="#">🐦</a><a href="#">▶️</a>
   </div>
   <p style="margin-top:13px;font-size:.76rem">© 2026 Aapka Sarathi Tours & Travel · All rights reserved · Made with ❤️ for India</p>
@@ -338,27 +338,28 @@ footer p{color:var(--muted);font-size:.82rem}
 </div>
 
 <script>
+// picsum.photos/id/{id}/600/400 — Fastly CDN, works everywhere, no hotlink block
 const destinations=[
-  {tag:'heritage',label:'Heritage',name:'Rajasthan Royal Tour',desc:'Explore majestic Amber Fort, Hawa Mahal and Jal Mahal across Jaipur, Jodhpur & Udaipur. Immerse in Rajputana grandeur, vibrant bazaars and royal cuisine.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/640px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg',price:'₹11,499',days:'6 Days',rating:'4.9',includes:'Hotel · AC Bus · Guide'},
-  {tag:'nature',label:'Nature',name:'Kerala Backwaters',desc:'Glide through tranquil backwaters on a traditional houseboat, explore lush tea gardens and pristine beaches of Alleppey and Kovalam.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/640px-Kerala_backwater.jpg',price:'₹9,799',days:'5 Days',rating:'4.8',includes:'Houseboat · Meals · Guide'},
-  {tag:'adventure',label:'Adventure',name:'Himachal – Manali',desc:'Conquer Rohtang Pass, trek Solang Valley and witness the magic of snow-capped Himalayan peaks. Perfect for adventure seekers.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/640px-Rohtang_Pass.jpg',price:'₹8,999',days:'5 Days',rating:'4.7',includes:'Hotel · Transport · Activities'},
-  {tag:'spiritual',label:'Spiritual',name:'Varanasi Pilgrimage',desc:'Witness the soul-stirring Ganga Aarti at sacred ghats, explore ancient temples and feel the timeless spiritual heartbeat of India.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Varanasi%2C_Uttar_Pradesh.jpg/640px-Varanasi%2C_Uttar_Pradesh.jpg',price:'₹6,499',days:'3 Days',rating:'4.9',includes:'Hotel · Boat Ride · Aarti'},
-  {tag:'heritage',label:'Heritage',name:'Taj Mahal – Agra',desc:"Witness the world's greatest monument of love at sunrise. Explore Agra Fort, Fatehpur Sikri and savour Mughal culinary heritage.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/640px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg',price:'₹7,299',days:'2 Days',rating:'5.0',includes:'Hotel · Guide · Entry Tickets'},
-  {tag:'beach',label:'Beach',name:'Goa Beach Bliss',desc:"Sun, surf and soul-food on Goa's golden sands. Enjoy vibrant culture, Portuguese heritage and fresh seafood by the Arabian Sea.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baga_Beach%2C_Goa.jpg/640px-Baga_Beach%2C_Goa.jpg',price:'₹7,999',days:'4 Days',rating:'4.8',includes:'Hotel · Airport Transfer · Tour'},
-  {tag:'wildlife',label:'Wildlife',name:'Jim Corbett Safari',desc:"Track Bengal tigers and exotic wildlife across India's oldest national park. Jeep safaris, jungle walks and nature photography await.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Great_White_Pelican_%28Pelecanus_onocrotalus%29_in_Jim_Corbett_National_Park.jpg/640px-Great_White_Pelican_%28Pelecanus_onocrotalus%29_in_Jim_Corbett_National_Park.jpg',price:'₹10,299',days:'3 Days',rating:'4.7',includes:'Resort · Jeep Safari · Guide'},
-  {tag:'beach',label:'Beach',name:'Andaman Islands',desc:'Dive into crystal-clear turquoise waters, explore Radhanagar Beach and snorkel through vibrant coral reefs in the Bay of Bengal.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg/640px-Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg',price:'₹18,499',days:'6 Days',rating:'4.9',includes:'Resort · Ferry · Snorkelling'},
-  {tag:'heritage',label:'Heritage',name:'Mysore & Coorg',desc:'Marvel at the illuminated Mysore Palace, explore fragrant spice gardens of Coorg and sip the finest single-origin Indian coffee.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mysore_palace_illuminated.jpg/640px-Mysore_palace_illuminated.jpg',price:'₹9,199',days:'4 Days',rating:'4.8',includes:'Hotel · Transport · Guide'}
+  {tag:'heritage',label:'Heritage',name:'Rajasthan Royal Tour',desc:'Explore majestic Amber Fort, Hawa Mahal and Jal Mahal across Jaipur, Jodhpur & Udaipur. Immerse in Rajputana grandeur, vibrant bazaars and royal cuisine.',img:'https://picsum.photos/id/1018/600/400',price:'₹11,499',days:'6 Days',rating:'4.9',includes:'Hotel · AC Bus · Guide'},
+  {tag:'nature',label:'Nature',name:'Kerala Backwaters',desc:'Glide through tranquil backwaters on a traditional houseboat, explore lush tea gardens and pristine beaches of Alleppey and Kovalam.',img:'https://picsum.photos/id/15/600/400',price:'₹9,799',days:'5 Days',rating:'4.8',includes:'Houseboat · Meals · Guide'},
+  {tag:'adventure',label:'Adventure',name:'Himachal – Manali',desc:'Conquer Rohtang Pass, trek Solang Valley and witness the magic of snow-capped Himalayan peaks. Perfect for adventure seekers.',img:'https://picsum.photos/id/29/600/400',price:'₹8,999',days:'5 Days',rating:'4.7',includes:'Hotel · Transport · Activities'},
+  {tag:'spiritual',label:'Spiritual',name:'Varanasi Pilgrimage',desc:'Witness the soul-stirring Ganga Aarti at sacred ghats, explore ancient temples and feel the timeless spiritual heartbeat of India.',img:'https://picsum.photos/id/1053/600/400',price:'₹6,499',days:'3 Days',rating:'4.9',includes:'Hotel · Boat Ride · Aarti'},
+  {tag:'heritage',label:'Heritage',name:'Taj Mahal – Agra',desc:"Witness the world's greatest monument of love at sunrise. Explore Agra Fort, Fatehpur Sikri and savour Mughal culinary heritage.",img:'https://picsum.photos/id/1047/600/400',price:'₹7,299',days:'2 Days',rating:'5.0',includes:'Hotel · Guide · Entry Tickets'},
+  {tag:'beach',label:'Beach',name:'Goa Beach Bliss',desc:"Sun, surf and soul-food on Goa's golden sands. Enjoy vibrant culture, Portuguese heritage and fresh seafood by the Arabian Sea.",img:'https://picsum.photos/id/1039/600/400',price:'₹7,999',days:'4 Days',rating:'4.8',includes:'Hotel · Airport Transfer · Tour'},
+  {tag:'wildlife',label:'Wildlife',name:'Jim Corbett Safari',desc:"Track Bengal tigers and exotic wildlife across India's oldest national park. Jeep safaris, jungle walks and nature photography await.",img:'https://picsum.photos/id/582/600/400',price:'₹10,299',days:'3 Days',rating:'4.7',includes:'Resort · Jeep Safari · Guide'},
+  {tag:'beach',label:'Beach',name:'Andaman Islands',desc:'Dive into crystal-clear turquoise waters, explore Radhanagar Beach and snorkel through vibrant coral reefs in the Bay of Bengal.',img:'https://picsum.photos/id/1011/600/400',price:'₹18,499',days:'6 Days',rating:'4.9',includes:'Resort · Ferry · Snorkelling'},
+  {tag:'heritage',label:'Heritage',name:'Mysore & Coorg',desc:'Marvel at the illuminated Mysore Palace, explore fragrant spice gardens of Coorg and sip the finest single-origin Indian coffee.',img:'https://picsum.photos/id/1031/600/400',price:'₹9,199',days:'4 Days',rating:'4.8',includes:'Hotel · Transport · Guide'}
 ];
 
 const galleryItems=[
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/640px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg',label:'Hawa Mahal, Jaipur',likes:'1.2K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/800px-Kerala_backwater.jpg',label:'Kerala Backwaters',likes:'2.4K',wide:true,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Varanasi%2C_Uttar_Pradesh.jpg/640px-Varanasi%2C_Uttar_Pradesh.jpg',label:'Varanasi Ghats',likes:'3.1K',wide:false,tall:true},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/640px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg',label:'Taj Mahal, Agra',likes:'4.8K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg/640px-Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg',label:'Andaman Islands',likes:'1.9K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mysore_palace_illuminated.jpg/640px-Mysore_palace_illuminated.jpg',label:'Mysore Palace',likes:'2.7K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/800px-Rohtang_Pass.jpg',label:'Rohtang Pass, Manali',likes:'1.6K',wide:true,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baga_Beach%2C_Goa.jpg/640px-Baga_Beach%2C_Goa.jpg',label:'Baga Beach, Goa',likes:'3.3K',wide:false,tall:false}
+  {img:'https://picsum.photos/id/1018/600/600',label:'Hawa Mahal, Jaipur',likes:'1.2K',wide:false,tall:false},
+  {img:'https://picsum.photos/id/15/800/600',label:'Kerala Backwaters',likes:'2.4K',wide:true,tall:false},
+  {img:'https://picsum.photos/id/1053/600/800',label:'Varanasi Ghats',likes:'3.1K',wide:false,tall:true},
+  {img:'https://picsum.photos/id/1047/600/600',label:'Taj Mahal, Agra',likes:'4.8K',wide:false,tall:false},
+  {img:'https://picsum.photos/id/1011/600/600',label:'Andaman Islands',likes:'1.9K',wide:false,tall:false},
+  {img:'https://picsum.photos/id/1031/600/600',label:'Mysore Palace',likes:'2.7K',wide:false,tall:false},
+  {img:'https://picsum.photos/id/29/800/600',label:'Rohtang Pass, Manali',likes:'1.6K',wide:true,tall:false},
+  {img:'https://picsum.photos/id/1039/600/600',label:'Baga Beach, Goa',likes:'3.3K',wide:false,tall:false}
 ];
 
 function renderDest(filter){
