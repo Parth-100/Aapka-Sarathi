@@ -9,8 +9,6 @@
 :root{--gold:#D4AF37;--gold2:#F5D769;--dark:#0a0a12;--dark2:#12121f;--card:#1a1a2e;--text:#f0f0f0;--muted:#aaa;--accent:#e05c3a;--wa:#25D366}
 body{background:var(--dark);color:var(--text);font-family:'Segoe UI',sans-serif;overflow-x:hidden;scroll-behavior:smooth}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:rgba(212,175,55,.3);border-radius:3px}
-
-/* NAV */
 nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(10,10,18,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.2);padding:13px 36px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .logo span{-webkit-text-fill-color:var(--accent)}
@@ -19,8 +17,6 @@ nav a{color:var(--muted);text-decoration:none;font-size:.87rem;letter-spacing:.4
 nav a:hover{color:var(--gold)}
 .nav-btn{background:linear-gradient(135deg,var(--gold),var(--accent));color:#fff;border:none;padding:8px 18px;border-radius:22px;font-size:.82rem;cursor:pointer;font-weight:700;transition:transform .15s}
 .nav-btn:hover{transform:scale(1.04)}
-
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,175,55,.08),transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(224,92,58,.06),transparent 50%),var(--dark)}
 #particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -36,8 +32,6 @@ nav a:hover{color:var(--gold)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,.35)}
 .btn-sec{background:transparent;color:var(--gold);border:1.5px solid var(--gold);padding:13px 30px;border-radius:28px;font-size:.94rem;cursor:pointer;font-weight:600;transition:all .2s}
 .btn-sec:hover{background:rgba(212,175,55,.1)}
-
-/* 3D HERO CARDS */
 .scene{display:flex;justify-content:center;gap:14px;perspective:1100px}
 .c3{width:190px;height:265px;position:relative;transform-style:preserve-3d;transition:transform .4s;cursor:pointer}
 .c3:nth-child(1){transform:rotateY(24deg) rotateX(4deg) translateZ(10px)}
@@ -52,24 +46,18 @@ nav a:hover{color:var(--gold)}
 .c3-info h4{font-size:.87rem;font-weight:600;margin-bottom:3px}
 .c3-info p{font-size:.72rem;color:var(--muted)}
 .c3-price{font-size:.83rem;font-weight:700;color:var(--gold);margin-top:4px}
-
-/* STATS */
 .stats{display:flex;justify-content:center;gap:55px;padding:46px 40px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.05),transparent);flex-wrap:wrap}
 .stat-num{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-lbl{font-size:.8rem;color:var(--muted);margin-top:3px;letter-spacing:.5px}
-
-/* SECTION */
 .section{padding:74px 40px;max-width:1200px;margin:0 auto}
 .sec-hdr{text-align:center;margin-bottom:46px}
 .sec-hdr h2{font-size:2.1rem;font-weight:700;margin-bottom:11px}
 .sec-hdr p{color:var(--muted);font-size:.96rem}
-
-/* DESTINATIONS */
 .dest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
 .dest-card{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid rgba(212,175,55,.1);transition:transform .35s,border-color .35s,box-shadow .35s;cursor:pointer;transform-style:preserve-3d}
 .dest-card:hover{transform:translateY(-9px) rotateX(2deg);border-color:rgba(212,175,55,.4);box-shadow:0 22px 55px rgba(0,0,0,.5),0 0 34px rgba(212,175,55,.08)}
 .dest-img{height:210px;position:relative;overflow:hidden}
-.dest-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.dest-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
 .dest-card:hover .dest-img img{transform:scale(1.06)}
 .dest-overlay{position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(transparent,var(--card))}
 .dest-badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.67rem;padding:3px 10px;border-radius:10px;text-transform:uppercase;letter-spacing:.6px}
@@ -87,8 +75,6 @@ nav a:hover{color:var(--gold)}
 .pkg-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
 .pkg-tab{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--muted);padding:7px 18px;border-radius:22px;cursor:pointer;font-size:.84rem;transition:all .25s}
 .pkg-tab.active,.pkg-tab:hover{background:rgba(212,175,55,.15);border-color:rgba(212,175,55,.4);color:var(--gold)}
-
-/* SERVICES */
 .svc-bg{background:linear-gradient(180deg,var(--dark),var(--dark2))}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
 .svc-card{background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.1);border-radius:16px;padding:24px 20px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
@@ -98,26 +84,22 @@ nav a:hover{color:var(--gold)}
 .svc-icon{font-size:2.2rem;margin-bottom:13px;display:block}
 .svc-card h3{font-size:.93rem;font-weight:600;margin-bottom:8px;color:var(--gold)}
 .svc-card p{font-size:.82rem;color:var(--muted);line-height:1.6}
-
-/* GALLERY */
 .gallery-bg{background:var(--dark2)}
 .insta-header{display:flex;align-items:center;gap:13px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
 .insta-logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
 .insta-handle{font-size:1.05rem;font-weight:600}
 .insta-handle a{color:var(--gold);text-decoration:none}
 .insta-follow{background:linear-gradient(135deg,#f09433,#bc1888);color:#fff;border:none;padding:7px 16px;border-radius:18px;font-size:.82rem;cursor:pointer;font-weight:600}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border-radius:16px;overflow:hidden}
-.g-item{position:relative;overflow:hidden;aspect-ratio:1;cursor:pointer}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-radius:16px;overflow:hidden}
+.g-item{position:relative;overflow:hidden;aspect-ratio:1;cursor:pointer;background:var(--card)}
 .g-item.wide{grid-column:span 2}
 .g-item.tall{grid-row:span 2}
-.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
 .g-item:hover img{transform:scale(1.08)}
 .g-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;transition:background .3s}
 .g-item:hover .g-overlay{background:rgba(0,0,0,.44)}
 .g-overlay span{color:#fff;font-size:.83rem;font-weight:600;opacity:0;transform:translateY(6px);transition:all .3s}
 .g-item:hover .g-overlay span{opacity:1;transform:translateY(0)}
-
-/* ── BOOKING FORM ── */
 .booking-bg{background:linear-gradient(135deg,var(--dark2),#0d0d1a)}
 .booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .booking-info h2{font-size:2rem;font-weight:700;margin-bottom:14px}
@@ -132,8 +114,8 @@ nav a:hover{color:var(--gold)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .form-group{margin-bottom:14px;position:relative}
 .form-group label{display:block;font-size:.78rem;color:var(--muted);margin-bottom:6px;letter-spacing:.3px}
-.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;color:var(--text);font-size:.87rem;font-family:inherit;outline:none;transition:border-color .25s,box-shadow .25s;appearance:none;-webkit-appearance:none}
-.form-group input:focus,.form-group select,.form-group textarea:focus{border-color:rgba(212,175,55,.5);box-shadow:0 0 0 3px rgba(212,175,55,.08)}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;color:var(--text);font-size:.87rem;font-family:inherit;outline:none;transition:border-color .25s;-webkit-appearance:none;appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(212,175,55,.5);box-shadow:0 0 0 3px rgba(212,175,55,.08)}
 .form-group select option{background:#1a1a2e;color:#f0f0f0}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(170,170,170,.5)}
@@ -142,14 +124,10 @@ nav a:hover{color:var(--gold)}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,.35)}
 .form-note{text-align:center;font-size:.75rem;color:var(--muted);margin-top:12px}
 .form-note span{color:var(--gold)}
-
-/* SUCCESS STATE */
 .success-msg{display:none;text-align:center;padding:30px 10px}
 .success-msg .tick{font-size:3.5rem;margin-bottom:14px}
 .success-msg h3{font-size:1.3rem;font-weight:700;color:var(--gold);margin-bottom:10px}
 .success-msg p{color:var(--muted);font-size:.9rem;line-height:1.7}
-
-/* TESTIMONIALS */
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:20px}
 .testi-card{background:var(--card);border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,.05);position:relative}
 .testi-card::before{content:'"';position:absolute;top:8px;right:18px;font-size:5rem;color:rgba(212,175,55,.1);font-family:Georgia,serif;line-height:1}
@@ -159,13 +137,9 @@ nav a:hover{color:var(--gold)}
 .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.84rem;color:#fff;flex-shrink:0}
 .author-info strong{display:block;font-size:.86rem;font-weight:600}
 .author-info span{font-size:.74rem;color:var(--muted)}
-
-/* CTA */
 .cta-section{text-align:center;padding:88px 40px;background:radial-gradient(ellipse at center,rgba(212,175,55,.08),transparent 60%)}
 .cta-section h2{font-size:2.3rem;font-weight:800;margin-bottom:13px}
 .cta-section p{color:var(--muted);max-width:490px;margin:0 auto 30px;line-height:1.75}
-
-/* FOOTER */
 footer{background:var(--dark2);border-top:1px solid rgba(212,175,55,.1);padding:36px;text-align:center}
 .f-logo{font-size:1.7rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
 footer p{color:var(--muted);font-size:.82rem}
@@ -175,25 +149,21 @@ footer p{color:var(--muted);font-size:.82rem}
 .f-social{display:flex;justify-content:center;gap:10px;margin-top:14px}
 .f-social a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.88rem;transition:all .2s}
 .f-social a:hover{background:rgba(212,175,55,.15);border-color:rgba(212,175,55,.3)}
-
-/* ── WHATSAPP BUTTON ── */
 .wa-fab{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .wa-bubble{background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 8px 28px rgba(0,0,0,.35);font-size:.82rem;color:#333;max-width:210px;line-height:1.5;transform:scale(0) translateY(8px);transform-origin:bottom right;transition:transform .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
-.wa-fab:hover .wa-bubble,.wa-bubble.show{transform:scale(1) translateY(0);pointer-events:auto}
+.wa-bubble.show{transform:scale(1) translateY(0);pointer-events:auto}
 .wa-bubble strong{display:block;color:#075E54;font-weight:700;margin-bottom:2px;font-size:.83rem}
 .wa-btn{width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .2s,box-shadow .2s;text-decoration:none;border:none;position:relative}
 .wa-btn:hover{transform:scale(1.1);box-shadow:0 10px 30px rgba(37,211,102,.55)}
 .wa-btn svg{width:30px;height:30px;fill:#fff}
 .wa-ping{position:absolute;top:0;right:0;width:14px;height:14px;background:#ff3b3b;border-radius:50%;border:2px solid var(--dark);animation:ping 1.5s ease-in-out infinite}
 @keyframes ping{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.7}}
-
 @media(max-width:900px){.booking-wrap{grid-template-columns:1fr}}
 @media(max-width:650px){nav ul{display:none}.stats{gap:20px}.scene{gap:8px}.c3{width:148px;height:215px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.g-item.wide{grid-column:span 1}.form-row{grid-template-columns:1fr}.section{padding:54px 20px}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">Aapka<span>Sarathi</span></div>
   <ul>
@@ -206,7 +176,6 @@ footer p{color:var(--muted);font-size:.82rem}
   <button class="nav-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Now</button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div id="particles"></div>
@@ -219,14 +188,13 @@ footer p{color:var(--muted);font-size:.82rem}
       <button class="btn-sec" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Trip</button>
     </div>
     <div class="scene">
-      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/800px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg" alt="Rajasthan"/></div><div class="c3-info"><h4>Rajasthan Royal</h4><p>Heritage & palaces</p><div class="c3-price">₹11,499</div></div></div></div>
-      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/1200px-Kerala_backwater.jpg" alt="Kerala"/></div><div class="c3-info"><h4>Kerala Backwaters</h4><p>Serene houseboat</p><div class="c3-price">₹9,799</div></div></div></div>
-      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/1200px-Rohtang_Pass.jpg" alt="Manali"/></div><div class="c3-info"><h4>Himachal Peaks</h4><p>Mountain adventures</p><div class="c3-price">₹8,999</div></div></div></div>
+      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/400px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg" alt="Rajasthan" crossorigin="anonymous"/></div><div class="c3-info"><h4>Rajasthan Royal</h4><p>Heritage & palaces</p><div class="c3-price">₹11,499</div></div></div></div>
+      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/400px-Kerala_backwater.jpg" alt="Kerala" crossorigin="anonymous"/></div><div class="c3-info"><h4>Kerala Backwaters</h4><p>Serene houseboat</p><div class="c3-price">₹9,799</div></div></div></div>
+      <div class="c3"><div class="c3-inner"><div class="c3-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/400px-Rohtang_Pass.jpg" alt="Manali" crossorigin="anonymous"/></div><div class="c3-info"><h4>Himachal Peaks</h4><p>Mountain adventures</p><div class="c3-price">₹8,999</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats">
   <div class="stat"><div class="stat-num">5000+</div><div class="stat-lbl">Happy Travelers</div></div>
   <div class="stat"><div class="stat-num">120+</div><div class="stat-lbl">Destinations</div></div>
@@ -234,7 +202,6 @@ footer p{color:var(--muted);font-size:.82rem}
   <div class="stat"><div class="stat-num">4.9★</div><div class="stat-lbl">Average Rating</div></div>
 </div>
 
-<!-- DESTINATIONS -->
 <div class="section" id="destinations">
   <div class="sec-hdr">
     <h2>Popular <span class="brand-grad">Destinations</span></h2>
@@ -252,111 +219,42 @@ footer p{color:var(--muted);font-size:.82rem}
   <div class="dest-grid" id="destGrid"></div>
 </div>
 
-<!-- BOOKING FORM -->
 <div class="booking-bg" id="booking">
   <div class="section">
     <div class="booking-wrap">
-      <!-- Left info -->
       <div class="booking-info">
         <h2>Book Your <span class="brand-grad">Dream Trip</span></h2>
         <p>Fill in the form and our travel expert will reach out within 2 hours to craft the perfect itinerary just for you — completely free of charge.</p>
-        <div class="b-feature">
-          <div class="b-icon">⚡</div>
-          <div><h4>Instant Confirmation</h4><p>Get a callback within 2 hours with your personalised itinerary.</p></div>
-        </div>
-        <div class="b-feature">
-          <div class="b-icon">💰</div>
-          <div><h4>Best Price Guarantee</h4><p>We match or beat any comparable package — no hidden charges.</p></div>
-        </div>
-        <div class="b-feature">
-          <div class="b-icon">🛡️</div>
-          <div><h4>Fully Flexible Booking</h4><p>Free cancellation up to 7 days before departure, no questions asked.</p></div>
-        </div>
-        <div class="b-feature">
-          <div class="b-icon">📞</div>
-          <div><h4>24/7 Support</h4><p>Our team is always available — before, during and after your trip.</p></div>
-        </div>
+        <div class="b-feature"><div class="b-icon">⚡</div><div><h4>Instant Confirmation</h4><p>Get a callback within 2 hours with your personalised itinerary.</p></div></div>
+        <div class="b-feature"><div class="b-icon">💰</div><div><h4>Best Price Guarantee</h4><p>We match or beat any comparable package — no hidden charges.</p></div></div>
+        <div class="b-feature"><div class="b-icon">🛡️</div><div><h4>Fully Flexible Booking</h4><p>Free cancellation up to 7 days before departure.</p></div></div>
+        <div class="b-feature"><div class="b-icon">📞</div><div><h4>24/7 Support</h4><p>Our team is always available before, during and after your trip.</p></div></div>
       </div>
-      <!-- Right form -->
       <div class="form-card" id="formCard">
         <h3>Plan My Trip ✈️</h3>
         <p class="form-sub">Free consultation — no payment needed to enquire</p>
         <div id="bookingForm">
           <div class="form-row">
-            <div class="form-group">
-              <label>Full Name *</label>
-              <input type="text" id="f-name" placeholder="e.g. Rahul Sharma"/>
-            </div>
-            <div class="form-group">
-              <label>Mobile Number *</label>
-              <input type="tel" id="f-phone" placeholder="+91 98765 43210"/>
-            </div>
+            <div class="form-group"><label>Full Name *</label><input type="text" id="f-name" placeholder="e.g. Rahul Sharma"/></div>
+            <div class="form-group"><label>Mobile Number *</label><input type="tel" id="f-phone" placeholder="+91 98765 43210"/></div>
           </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" id="f-email" placeholder="yourname@email.com"/>
+          <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="yourname@email.com"/></div>
+          <div class="form-row">
+            <div class="form-group"><label>Destination *</label><select id="f-dest"><option value="">Select destination</option><option>Rajasthan Royal Tour</option><option>Kerala Backwaters</option><option>Himachal – Manali</option><option>Varanasi Pilgrimage</option><option>Taj Mahal – Agra</option><option>Goa Beach Bliss</option><option>Jim Corbett Safari</option><option>Andaman Islands</option><option>Mysore & Coorg</option><option>Custom Itinerary</option></select><span class="sel-arrow">▼</span></div>
+            <div class="form-group"><label>No. of Travellers *</label><select id="f-people"><option value="">Select</option><option>1 – Solo</option><option>2 – Couple</option><option>3–5 – Small Group</option><option>6–10 – Group</option><option>10+ – Large Group</option></select><span class="sel-arrow">▼</span></div>
           </div>
           <div class="form-row">
-            <div class="form-group" style="position:relative">
-              <label>Destination *</label>
-              <select id="f-dest">
-                <option value="">Select destination</option>
-                <option>Rajasthan Royal Tour</option>
-                <option>Kerala Backwaters</option>
-                <option>Himachal – Manali</option>
-                <option>Varanasi Pilgrimage</option>
-                <option>Taj Mahal – Agra</option>
-                <option>Goa Beach Bliss</option>
-                <option>Jim Corbett Safari</option>
-                <option>Andaman Islands</option>
-                <option>Mysore & Coorg</option>
-                <option>Custom Itinerary</option>
-              </select>
-              <span class="sel-arrow">▼</span>
-            </div>
-            <div class="form-group" style="position:relative">
-              <label>No. of Travellers *</label>
-              <select id="f-people">
-                <option value="">Select</option>
-                <option>1 – Solo</option>
-                <option>2 – Couple</option>
-                <option>3–5 – Small Group</option>
-                <option>6–10 – Group</option>
-                <option>10+ – Large Group</option>
-              </select>
-              <span class="sel-arrow">▼</span>
-            </div>
+            <div class="form-group"><label>Travel Date *</label><input type="date" id="f-date"/></div>
+            <div class="form-group"><label>Budget (per person)</label><select id="f-budget"><option value="">Select range</option><option>Under ₹5,000</option><option>₹5,000 – ₹10,000</option><option>₹10,000 – ₹20,000</option><option>₹20,000 – ₹50,000</option><option>Above ₹50,000</option></select><span class="sel-arrow">▼</span></div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Travel Date *</label>
-              <input type="date" id="f-date"/>
-            </div>
-            <div class="form-group" style="position:relative">
-              <label>Budget (per person)</label>
-              <select id="f-budget">
-                <option value="">Select range</option>
-                <option>Under ₹5,000</option>
-                <option>₹5,000 – ₹10,000</option>
-                <option>₹10,000 – ₹20,000</option>
-                <option>₹20,000 – ₹50,000</option>
-                <option>Above ₹50,000</option>
-              </select>
-              <span class="sel-arrow">▼</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Special Requirements / Message</label>
-            <textarea id="f-msg" placeholder="Any dietary needs, accessibility requirements, preferred hotels, special occasions…"></textarea>
-          </div>
+          <div class="form-group"><label>Special Requirements / Message</label><textarea id="f-msg" placeholder="Any dietary needs, accessibility requirements, special occasions…"></textarea></div>
           <button class="submit-btn" onclick="submitForm()">Send Booking Request 🚀</button>
           <p class="form-note">🔒 Your data is safe with us. <span>No spam, ever.</span></p>
         </div>
-        <!-- Success -->
         <div class="success-msg" id="successMsg">
           <div class="tick">🎉</div>
           <h3>Booking Request Sent!</h3>
-          <p>Thank you! Our travel expert will call you within <strong style="color:var(--gold)">2 hours</strong> to finalise your perfect itinerary.<br><br>Meanwhile, chat with us directly on WhatsApp for a faster response! 👇</p>
+          <p>Thank you! Our travel expert will call you within <strong style="color:var(--gold)">2 hours</strong> to finalise your perfect itinerary.<br><br>Meanwhile, chat with us directly on WhatsApp!</p>
           <br>
           <button class="btn-primary" onclick="openWA()" style="margin:0 auto">Chat on WhatsApp 💬</button>
         </div>
@@ -365,13 +263,9 @@ footer p{color:var(--muted);font-size:.82rem}
   </div>
 </div>
 
-<!-- SERVICES -->
 <div class="svc-bg" id="about">
   <div class="section">
-    <div class="sec-hdr">
-      <h2>Our <span class="brand-grad">Services</span></h2>
-      <p>Everything you need for a perfect journey, all in one trusted place</p>
-    </div>
+    <div class="sec-hdr"><h2>Our <span class="brand-grad">Services</span></h2><p>Everything you need for a perfect journey, all in one trusted place</p></div>
     <div class="svc-grid">
       <div class="svc-card"><span class="svc-icon">🚌</span><h3>Comfortable Transport</h3><p>AC vehicles and experienced professional drivers for every route.</p></div>
       <div class="svc-card"><span class="svc-icon">🏨</span><h3>Premium Stay</h3><p>Curated hotels ensuring value and comfort at every destination.</p></div>
@@ -383,17 +277,13 @@ footer p{color:var(--muted);font-size:.82rem}
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="gallery-bg" id="gallery">
   <div class="section">
     <div class="sec-hdr">
       <div class="insta-header">
         <div class="insta-logo">📸</div>
-        <div>
-          <div class="insta-handle">Follow us <a href="https://www.instagram.com/AapkaSarathi" target="_blank">@AapkaSarathi</a></div>
-          <div style="font-size:.78rem;color:var(--muted)">Real moments. Real India. Real memories.</div>
-        </div>
-        <button class="insta-follow">+ Follow</button>
+        <div><div class="insta-handle">Follow us <a href="https://www.instagram.com/AapkaSarathi" target="_blank">@AapkaSarathi</a></div><div style="font-size:.78rem;color:var(--muted)">Real moments. Real India. Real memories.</div></div>
+        <button class="insta-follow" onclick="window.open('https://www.instagram.com/AapkaSarathi','_blank')">+ Follow</button>
       </div>
       <p style="color:var(--muted);font-size:.94rem">Our travelers share their most beautiful moments from across India</p>
     </div>
@@ -404,23 +294,18 @@ footer p{color:var(--muted);font-size:.82rem}
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
 <div class="section">
-  <div class="sec-hdr">
-    <h2>What Travelers <span class="brand-grad">Say</span></h2>
-    <p>Real stories from thousands of happy customers across India</p>
-  </div>
+  <div class="sec-hdr"><h2>What Travelers <span class="brand-grad">Say</span></h2><p>Real stories from thousands of happy customers across India</p></div>
   <div class="testi-grid">
     <div class="testi-card"><div class="stars">★★★★★</div><p>Aapka Sarathi made our Rajasthan trip absolutely magical. Everything was perfectly organised — the driver was punctual, hotels were excellent!</p><div class="testi-author"><div class="avatar">RS</div><div class="author-info"><strong>Rahul Sharma</strong><span>Mumbai, Maharashtra</span></div></div></div>
     <div class="testi-card"><div class="stars">★★★★★</div><p>Kerala trip was a dream come true. The houseboat experience was breathtaking. I felt completely safe throughout the journey.</p><div class="testi-author"><div class="avatar">PD</div><div class="author-info"><strong>Priya Desai</strong><span>Pune, Maharashtra</span></div></div></div>
     <div class="testi-card"><div class="stars">★★★★★</div><p>Varanasi Ganga Aarti at sunset was one of the most spiritual experiences of my life. Aapka Sarathi organised everything perfectly!</p><div class="testi-author"><div class="avatar">SM</div><div class="author-info"><strong>Sunita Mehta</strong><span>Jaipur, Rajasthan</span></div></div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><p>Jim Corbett safari exceeded all expectations! Spotted a tiger on day one. The resort and jeep safari arrangements were world-class.</p><div class="testi-author"><div class="avatar">VR</div><div class="author-info"><strong>Vikram Rao</strong><span>Bengaluru, Karnataka</span></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>Jim Corbett safari exceeded all expectations! The resort and jeep safari arrangements were absolutely world-class.</p><div class="testi-author"><div class="avatar">VR</div><div class="author-info"><strong>Vikram Rao</strong><span>Bengaluru, Karnataka</span></div></div></div>
     <div class="testi-card"><div class="stars">★★★★★</div><p>Taj Mahal at sunrise was surreal. Early entry passes, a brilliant guide and a wonderful hotel — every detail was taken care of!</p><div class="testi-author"><div class="avatar">NP</div><div class="author-info"><strong>Neha Patil</strong><span>Nashik, Maharashtra</span></div></div></div>
     <div class="testi-card"><div class="stars">★★★★★</div><p>First-time solo traveller and Aapka Sarathi made it so easy. Their Himachal package was great value and the views were stunning!</p><div class="testi-author"><div class="avatar">AK</div><div class="author-info"><strong>Ankit Kumar</strong><span>Delhi, NCR</span></div></div></div>
   </div>
 </div>
 
-<!-- CTA -->
 <div class="cta-section" id="contact">
   <h2>Ready to Begin Your <span class="brand-grad">Journey?</span></h2>
   <p>Let Aapka Sarathi handle every detail while you soak in the beauty of incredible India.</p>
@@ -430,7 +315,6 @@ footer p{color:var(--muted);font-size:.82rem}
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="f-logo">AapkaSarathi</div>
   <p>Your trusted companion for calm and safe India journeys</p>
@@ -439,59 +323,51 @@ footer p{color:var(--muted);font-size:.82rem}
     <a href="#about">Services</a><a href="#gallery">Gallery</a><a href="#">Privacy Policy</a>
   </div>
   <div class="f-social">
-    <a href="https://www.instagram.com" target="_blank">📸</a>
+    <a href="https://www.instagram.com/AapkaSarathi" target="_blank">📸</a>
     <a href="#">📘</a><a href="#">🐦</a><a href="#">▶️</a>
   </div>
   <p style="margin-top:13px;font-size:.76rem">© 2026 Aapka Sarathi Tours & Travel · All rights reserved · Made with ❤️ for India</p>
 </footer>
 
-<!-- WHATSAPP FAB -->
 <div class="wa-fab" id="waFab">
-  <div class="wa-bubble" id="waBubble">
-    <strong>Chat with us! 👋</strong>
-    Hi! Planning a trip? We reply in minutes on WhatsApp.
-  </div>
-  <a class="wa-btn" id="waBtn" href="https://wa.me/919270098262" target="_blank" onclick="openWA(); return false;" title="Chat on WhatsApp">
+  <div class="wa-bubble" id="waBubble"><strong>Chat with us! 👋</strong>Hi! Planning a trip? We reply in minutes on WhatsApp.</div>
+  <a class="wa-btn" href="https://wa.me/919270098262" target="_blank" title="Chat on WhatsApp">
     <span class="wa-ping"></span>
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.651 4.832 1.789 6.863L2 30l7.352-1.766A13.93 13.93 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.4a11.35 11.35 0 01-5.793-1.587l-.414-.247-4.363 1.049 1.075-4.243-.27-.436A11.35 11.35 0 014.6 16C4.6 9.7 9.7 4.6 16 4.6S27.4 9.7 27.4 16 22.3 27.4 16 27.4zm6.21-8.507c-.34-.17-2.012-.993-2.324-1.105-.311-.113-.538-.17-.764.17-.227.34-.878 1.105-1.077 1.332-.198.227-.397.255-.737.085-.34-.17-1.435-.529-2.733-1.686-1.01-.9-1.692-2.012-1.89-2.352-.198-.34-.021-.523.149-.692.153-.152.34-.397.51-.595.17-.198.226-.34.34-.567.113-.227.057-.425-.028-.595-.085-.17-.764-1.843-1.047-2.523-.276-.664-.557-.574-.764-.584l-.652-.011c-.227 0-.595.085-.906.425-.311.34-1.19 1.162-1.19 2.834 0 1.672 1.218 3.288 1.388 3.515.17.227 2.394 3.657 5.801 5.127.811.35 1.443.559 1.937.716.813.259 1.553.223 2.138.135.652-.097 2.012-.823 2.295-1.617.284-.793.284-1.474.199-1.616-.085-.142-.311-.227-.652-.397z"/>
-    </svg>
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.651 4.832 1.789 6.863L2 30l7.352-1.766A13.93 13.93 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.4a11.35 11.35 0 01-5.793-1.587l-.414-.247-4.363 1.049 1.075-4.243-.27-.436A11.35 11.35 0 014.6 16C4.6 9.7 9.7 4.6 16 4.6S27.4 9.7 27.4 16 22.3 27.4 16 27.4zm6.21-8.507c-.34-.17-2.012-.993-2.324-1.105-.311-.113-.538-.17-.764.17-.227.34-.878 1.105-1.077 1.332-.198.227-.397.255-.737.085-.34-.17-1.435-.529-2.733-1.686-1.01-.9-1.692-2.012-1.89-2.352-.198-.34-.021-.523.149-.692.153-.152.34-.397.51-.595.17-.198.226-.34.34-.567.113-.227.057-.425-.028-.595-.085-.17-.764-1.843-1.047-2.523-.276-.664-.557-.574-.764-.584l-.652-.011c-.227 0-.595.085-.906.425-.311.34-1.19 1.162-1.19 2.834 0 1.672 1.218 3.288 1.388 3.515.17.227 2.394 3.657 5.801 5.127.811.35 1.443.559 1.937.716.813.259 1.553.223 2.138.135.652-.097 2.012-.823 2.295-1.617.284-.793.284-1.474.199-1.616-.085-.142-.311-.227-.652-.397z"/></svg>
   </a>
 </div>
 
 <script>
-// ── DESTINATIONS DATA ───────────────────────────────────────────
 const destinations=[
-  {tag:'heritage',label:'Heritage',name:'Rajasthan Royal Tour',desc:'Explore majestic Amber Fort, Hawa Mahal and Jal Mahal across Jaipur, Jodhpur & Udaipur. Immerse in Rajputana grandeur, vibrant bazaars and royal cuisine.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/800px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg',price:'₹11,499',days:'6 Days',rating:'4.9',includes:'Hotel · AC Bus · Guide'},
-  {tag:'nature',label:'Nature',name:'Kerala Backwaters',desc:'Glide through tranquil backwaters on a traditional houseboat, explore lush tea gardens and pristine beaches of Alleppey and Kovalam.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/1200px-Kerala_backwater.jpg',price:'₹9,799',days:'5 Days',rating:'4.8',includes:'Houseboat · Meals · Guide'},
-  {tag:'adventure',label:'Adventure',name:'Himachal – Manali',desc:'Conquer Rohtang Pass, trek Solang Valley and witness the magic of snow-capped Himalayan peaks. Perfect for adventure seekers.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/1200px-Rohtang_Pass.jpg',price:'₹8,999',days:'5 Days',rating:'4.7',includes:'Hotel · Transport · Activities'},
-  {tag:'spiritual',label:'Spiritual',name:'Varanasi Pilgrimage',desc:'Witness the soul-stirring Ganga Aarti at sacred ghats, explore ancient temples and feel the timeless spiritual heartbeat of India.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Varanasi%2C_Uttar_Pradesh.jpg/1200px-Varanasi%2C_Uttar_Pradesh.jpg',price:'₹6,499',days:'3 Days',rating:'4.9',includes:'Hotel · Boat Ride · Aarti'},
-  {tag:'heritage',label:'Heritage',name:'Taj Mahal – Agra',desc:"Witness the world's greatest monument of love at sunrise. Explore Agra Fort, Fatehpur Sikri and savour Mughal culinary heritage.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/1200px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg',price:'₹7,299',days:'2 Days',rating:'5.0',includes:'Hotel · Guide · Entry Tickets'},
-  {tag:'beach',label:'Beach',name:'Goa Beach Bliss',desc:"Sun, surf and soul-food on Goa's golden sands. Enjoy vibrant culture, Portuguese heritage and fresh seafood by the Arabian Sea.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baga_Beach%2C_Goa.jpg/1200px-Baga_Beach%2C_Goa.jpg',price:'₹7,999',days:'4 Days',rating:'4.8',includes:'Hotel · Airport Transfer · Tour'},
-  {tag:'wildlife',label:'Wildlife',name:'Jim Corbett Safari',desc:"Track Bengal tigers and exotic wildlife across India's oldest national park. Jeep safaris, jungle walks and nature photography await.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Great_White_Pelican_%28Pelecanus_onocrotalus%29_in_Jim_Corbett_National_Park.jpg/1200px-Great_White_Pelican_%28Pelecanus_onocrotalus%29_in_Jim_Corbett_National_Park.jpg',price:'₹10,299',days:'3 Days',rating:'4.7',includes:'Resort · Jeep Safari · Guide'},
-  {tag:'beach',label:'Beach',name:'Andaman Islands',desc:'Dive into crystal-clear turquoise waters, explore Radhanagar Beach and snorkel through vibrant coral reefs in the Bay of Bengal.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg/1200px-Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg',price:'₹18,499',days:'6 Days',rating:'4.9',includes:'Resort · Ferry · Snorkelling'},
-  {tag:'heritage',label:'Heritage',name:'Mysore & Coorg',desc:'Marvel at the illuminated Mysore Palace, explore fragrant spice gardens of Coorg and sip the finest single-origin Indian coffee.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mysore_palace_illuminated.jpg/1200px-Mysore_palace_illuminated.jpg',price:'₹9,199',days:'4 Days',rating:'4.8',includes:'Hotel · Transport · Guide'}
+  {tag:'heritage',label:'Heritage',name:'Rajasthan Royal Tour',desc:'Explore majestic Amber Fort, Hawa Mahal and Jal Mahal across Jaipur, Jodhpur & Udaipur. Immerse in Rajputana grandeur, vibrant bazaars and royal cuisine.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/640px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg',price:'₹11,499',days:'6 Days',rating:'4.9',includes:'Hotel · AC Bus · Guide'},
+  {tag:'nature',label:'Nature',name:'Kerala Backwaters',desc:'Glide through tranquil backwaters on a traditional houseboat, explore lush tea gardens and pristine beaches of Alleppey and Kovalam.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/640px-Kerala_backwater.jpg',price:'₹9,799',days:'5 Days',rating:'4.8',includes:'Houseboat · Meals · Guide'},
+  {tag:'adventure',label:'Adventure',name:'Himachal – Manali',desc:'Conquer Rohtang Pass, trek Solang Valley and witness the magic of snow-capped Himalayan peaks. Perfect for adventure seekers.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/640px-Rohtang_Pass.jpg',price:'₹8,999',days:'5 Days',rating:'4.7',includes:'Hotel · Transport · Activities'},
+  {tag:'spiritual',label:'Spiritual',name:'Varanasi Pilgrimage',desc:'Witness the soul-stirring Ganga Aarti at sacred ghats, explore ancient temples and feel the timeless spiritual heartbeat of India.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Varanasi%2C_Uttar_Pradesh.jpg/640px-Varanasi%2C_Uttar_Pradesh.jpg',price:'₹6,499',days:'3 Days',rating:'4.9',includes:'Hotel · Boat Ride · Aarti'},
+  {tag:'heritage',label:'Heritage',name:'Taj Mahal – Agra',desc:"Witness the world's greatest monument of love at sunrise. Explore Agra Fort, Fatehpur Sikri and savour Mughal culinary heritage.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/640px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg',price:'₹7,299',days:'2 Days',rating:'5.0',includes:'Hotel · Guide · Entry Tickets'},
+  {tag:'beach',label:'Beach',name:'Goa Beach Bliss',desc:"Sun, surf and soul-food on Goa's golden sands. Enjoy vibrant culture, Portuguese heritage and fresh seafood by the Arabian Sea.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baga_Beach%2C_Goa.jpg/640px-Baga_Beach%2C_Goa.jpg',price:'₹7,999',days:'4 Days',rating:'4.8',includes:'Hotel · Airport Transfer · Tour'},
+  {tag:'wildlife',label:'Wildlife',name:'Jim Corbett Safari',desc:"Track Bengal tigers and exotic wildlife across India's oldest national park. Jeep safaris, jungle walks and nature photography await.",img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Great_White_Pelican_%28Pelecanus_onocrotalus%29_in_Jim_Corbett_National_Park.jpg/640px-Great_White_Pelican_%28Pelecanus_onocrotalus%29_in_Jim_Corbett_National_Park.jpg',price:'₹10,299',days:'3 Days',rating:'4.7',includes:'Resort · Jeep Safari · Guide'},
+  {tag:'beach',label:'Beach',name:'Andaman Islands',desc:'Dive into crystal-clear turquoise waters, explore Radhanagar Beach and snorkel through vibrant coral reefs in the Bay of Bengal.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg/640px-Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg',price:'₹18,499',days:'6 Days',rating:'4.9',includes:'Resort · Ferry · Snorkelling'},
+  {tag:'heritage',label:'Heritage',name:'Mysore & Coorg',desc:'Marvel at the illuminated Mysore Palace, explore fragrant spice gardens of Coorg and sip the finest single-origin Indian coffee.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mysore_palace_illuminated.jpg/640px-Mysore_palace_illuminated.jpg',price:'₹9,199',days:'4 Days',rating:'4.8',includes:'Hotel · Transport · Guide'}
 ];
 
 const galleryItems=[
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/800px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg',label:'Hawa Mahal, Jaipur',likes:'1.2K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/1200px-Kerala_backwater.jpg',label:'Kerala Backwaters',likes:'2.4K',wide:true,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Varanasi%2C_Uttar_Pradesh.jpg/1200px-Varanasi%2C_Uttar_Pradesh.jpg',label:'Varanasi Ghats',likes:'3.1K',wide:false,tall:true},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/1200px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg',label:'Taj Mahal, Agra',likes:'4.8K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg/1200px-Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg',label:'Andaman Islands',likes:'1.9K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mysore_palace_illuminated.jpg/1200px-Mysore_palace_illuminated.jpg',label:'Mysore Palace',likes:'2.7K',wide:false,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/1200px-Rohtang_Pass.jpg',label:'Rohtang Pass, Manali',likes:'1.6K',wide:true,tall:false},
-  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baga_Beach%2C_Goa.jpg/1200px-Baga_Beach%2C_Goa.jpg',label:'Baga Beach, Goa',likes:'3.3K',wide:false,tall:false}
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg/640px-Hawa_Mahal%2C_Jaipur%2C_Rajasthan%2C_India.jpg',label:'Hawa Mahal, Jaipur',likes:'1.2K',wide:false,tall:false},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kerala_backwater.jpg/800px-Kerala_backwater.jpg',label:'Kerala Backwaters',likes:'2.4K',wide:true,tall:false},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Varanasi%2C_Uttar_Pradesh.jpg/640px-Varanasi%2C_Uttar_Pradesh.jpg',label:'Varanasi Ghats',likes:'3.1K',wide:false,tall:true},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/640px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg',label:'Taj Mahal, Agra',likes:'4.8K',wide:false,tall:false},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg/640px-Radhanagar_beach%2C_Havelock_Island%2C_Andaman.jpg',label:'Andaman Islands',likes:'1.9K',wide:false,tall:false},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mysore_palace_illuminated.jpg/640px-Mysore_palace_illuminated.jpg',label:'Mysore Palace',likes:'2.7K',wide:false,tall:false},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rohtang_Pass.jpg/800px-Rohtang_Pass.jpg',label:'Rohtang Pass, Manali',likes:'1.6K',wide:true,tall:false},
+  {img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baga_Beach%2C_Goa.jpg/640px-Baga_Beach%2C_Goa.jpg',label:'Baga Beach, Goa',likes:'3.3K',wide:false,tall:false}
 ];
 
-// ── RENDER DESTINATIONS ─────────────────────────────────────────
 function renderDest(filter){
   const grid=document.getElementById('destGrid');
   const items=filter==='all'?destinations:destinations.filter(d=>d.tag===filter);
   grid.innerHTML=items.map(d=>`
     <div class="dest-card">
       <div class="dest-img">
-        <img src="${d.img}" alt="${d.name}" onerror="this.style.display='none'"/>
+        <img src="${d.img}" alt="${d.name}" loading="lazy"/>
         <div class="dest-overlay"></div>
         <div class="dest-badge">${d.label}</div>
       </div>
@@ -509,7 +385,6 @@ function renderDest(filter){
         </div>
       </div>
     </div>`).join('');
-  // Tilt
   grid.querySelectorAll('.dest-card').forEach(c=>{
     c.addEventListener('mousemove',e=>{
       const r=c.getBoundingClientRect(),x=((e.clientX-r.left)/r.width-.5)*11,y=((e.clientY-r.top)/r.height-.5)*-11;
@@ -520,13 +395,11 @@ function renderDest(filter){
 }
 renderDest('all');
 
-// Book Now on dest card → prefill form
 function selectDest(name){
   document.getElementById('f-dest').value=name;
   document.getElementById('booking').scrollIntoView({behavior:'smooth'});
 }
 
-// Filter tabs
 document.getElementById('pkgTabs').addEventListener('click',e=>{
   const tab=e.target.closest('.pkg-tab');
   if(!tab)return;
@@ -535,14 +408,12 @@ document.getElementById('pkgTabs').addEventListener('click',e=>{
   renderDest(tab.dataset.filter);
 });
 
-// ── GALLERY ─────────────────────────────────────────────────────
 document.getElementById('galleryGrid').innerHTML=galleryItems.map(g=>`
   <div class="g-item${g.wide?' wide':''}${g.tall?' tall':''}">
     <img src="${g.img}" alt="${g.label}" loading="lazy"/>
     <div class="g-overlay"><span>❤️ ${g.likes}</span><span style="font-size:.76rem">${g.label}</span></div>
   </div>`).join('');
 
-// ── FORM SUBMIT ─────────────────────────────────────────────────
 function submitForm(){
   const name=document.getElementById('f-name').value.trim();
   const phone=document.getElementById('f-phone').value.trim();
@@ -554,14 +425,10 @@ function submitForm(){
   if(!dest){alert('Please select a destination.');return;}
   if(!people){alert('Please select number of travellers.');return;}
   if(!date){alert('Please select a travel date.');return;}
-  // Show success
   document.getElementById('bookingForm').style.display='none';
   document.getElementById('successMsg').style.display='block';
 }
 
-// ── WHATSAPP ────────────────────────────────────────────────────
-// Replace with your actual WhatsApp number: +91XXXXXXXXXX
-const WA_NUMBER='919270098262';
 function openWA(){
   const name=document.getElementById('f-name')?.value||'';
   const dest=document.getElementById('f-dest')?.value||'';
@@ -569,27 +436,23 @@ function openWA(){
   if(name)msg+=` My name is ${name}.`;
   if(dest)msg+=` I\'m looking at the ${dest} package.`;
   msg+=' Please share more details.';
-  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}','_blank'`);
+  window.open('https://wa.me/919270098262?text='+encodeURIComponent(msg),'_blank');
 }
 
-// Show bubble after 3s
 setTimeout(()=>{
   const b=document.getElementById('waBubble');
   b.classList.add('show');
   setTimeout(()=>b.classList.remove('show'),5000);
 },3000);
 
-// ── PARTICLES ───────────────────────────────────────────────────
 const pc=document.getElementById('particles');
 for(let i=0;i<26;i++){
-  const p=document.createElement('div');
-  p.className='particle';
+  const p=document.createElement('div');p.className='particle';
   const s=Math.random()*4+2;
   p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;background:rgba(212,175,55,${Math.random()*.4+.1});animation-delay:${Math.random()*6}s;animation-duration:${Math.random()*4+4}s`;
   pc.appendChild(p);
 }
 
-// ── COUNT-UP ────────────────────────────────────────────────────
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -600,8 +463,7 @@ const io=new IntersectionObserver(entries=>{
         el.textContent=(num%1===0?Math.round(v):v.toFixed(1))+sfx;
         if(prog<1)requestAnimationFrame(tick);
       };
-      requestAnimationFrame(tick);
-      io.unobserve(el);
+      requestAnimationFrame(tick);io.unobserve(el);
     }
   });
 },{threshold:.5});
